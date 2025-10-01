@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: "Courier New", Courier, monospace;
+  background: #171717;
+  color: white;
+}
+
+nav {
+  width: 100%;
+  position: sticky;
+  top: 1em;
+  margin-block-end: 10%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+ul {
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+}
+
+li {
+  font-size: clamp(1rem, 2vw, 2rem);
+  z-index: 1;
+  list-style-type: none;
+  position: relative;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  transition: all 0.5s linear;
+}
+
+li:hover {
+  color: cyan;
+  cursor: pointer;
+}
+
+li::before {
+  content: "";
+  background: linear-gradient(to right, aliceblue, cyan);
+  height: 0.7em;
+  width: 0.7em;
+  border-radius: 100px;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+
+li:hover::before {
+  opacity: 1;
+  background: linear-gradient(to left, cyan, darkblue);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+article {
+  line-height: 1.6;
+}
+
+section {
+  margin-bottom: 1em;
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-block-start: 2em;
+
+}
+
+.col {
+  text-transform: uppercase;
+  display:flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.col a {
+  text-decoration-line: none;
+  font-weight: 1000;
+  color: white;
+}
